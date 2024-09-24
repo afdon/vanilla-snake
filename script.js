@@ -43,6 +43,10 @@ function createGameElement(tag, className) {
 
 // Set pos of snake or food
 
+function setPosition(element, position) {
+    element.style.gridColumn = position.x;
+    element.style.gridRow = position.y;
+  }
 
 // Draw food func
 
