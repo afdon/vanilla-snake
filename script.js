@@ -49,6 +49,7 @@ function setPosition(element, position) {
   }
 
 // Draw food func
+//test // draw ();
 
 function drawFood() {
     if (gameStarted) {
