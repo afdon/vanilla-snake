@@ -111,5 +111,41 @@ function move() {
 
 // Start game func
 
+function startGame() {
+    gameStarted = true; // Keep track of a running game
+    instructionText.style.display = 'none';
+    logo.style.display = 'none';
+    gameInterval = setInterval(() => {
+      move();
+      checkCollision();
+      draw();
+    }, gameSpeedDelay);
+  }
 
 // Listen to keypress
+
+function handleKeyPress(event) {
+    if (
+      (!gameStarted && event.code === 'Space') ||
+      (!gameStarted && event.key === ' ')
+    ) {
+      startGame();
+    } else {
+      switch (event.key) {
+        case 'ArrowUp':
+          direction = 'up';
+          break;
+        case 'ArrowDown':
+          direction = 'down';
+          break;
+        case 'ArrowLeft':
+          direction = 'left';
+          break;
+        case 'ArrowRight':
+          direction = 'right';
+          break;
+      }
+    }
+  }
+  
+  document.addEventListener('keydown', handleKeyPress);
