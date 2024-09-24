@@ -33,10 +33,20 @@ function drawSnake() {
     });
   }
 
-
 // Create snake or food
+
+function createGameElement(tag, className) {
+    const element = document.createElement(tag);
+    element.className = className;
+    return element;
+  }
+
 // Set pos of snake or food
+
+
 // Draw food func
+
+
 // Generate food
 // Move snake
 // Start game func
