@@ -60,6 +60,17 @@ function drawFood() {
   }
 
 // Generate food
+
+function generateFood() {
+    const x = Math.floor(Math.random() * gridSize) + 1;
+    const y = Math.floor(Math.random() * gridSize) + 1;
+    return { x, y };
+  }
+
 // Move snake
+
+
 // Start game func
+
+
 // Listen to keypress
