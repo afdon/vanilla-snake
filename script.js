@@ -85,8 +85,29 @@ function move() {
         head.x++;
         break;
     }
+    snake.unshift(head);
 
+    //   snake.pop();
+  
+    if (head.x === food.x && head.y === food.y) {
+      food = generateFood();
+      increaseSpeed();
+      clearInterval(gameInterval); // Clear past interval
+      gameInterval = setInterval(() => {
+        move();
+        checkCollision();
+        draw();
+      }, gameSpeedDelay);
+    } else {
+      snake.pop();
+    }
   }
+  
+  // Test moving
+  // setInterval(() => {
+  //   move(); // move
+  //   draw(); // draw new pos
+  // }, 200);
 
 // Start game func
 
