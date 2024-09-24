@@ -6,7 +6,26 @@ const score = document.getElementById('score');
 const highScoreText = document.getElementById('highScore');
 
 // Define game variables
+
+const gridSize = 20;
+let snake = [{ x: 10, y: 10 }];
+let food = generateFood();
+let highScore = 0;
+let direction = 'right';
+let gameInterval;
+let gameSpeedDelay = 200;
+let gameStarted = false;
+
 // Draw map, snake, food
+function draw() {
+  board.innerHTML = '';
+  drawSnake();
+  drawFood();
+  updateScore();
+}
+
+
+
 // Draw snake
 // Create snake or food
 // Set pos of snake or food
